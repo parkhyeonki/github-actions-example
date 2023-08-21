@@ -18,6 +18,11 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v3
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+        node-version: '16'
+
       - name: Get npm cache directory
         id: npm-cache-dir
         run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
@@ -29,6 +34,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
       - if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
         name: Install node modules
         run: npm install
