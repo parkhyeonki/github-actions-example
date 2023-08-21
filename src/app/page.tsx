@@ -4,8 +4,10 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div>CI TEST</div>
-      <div>PR TEST</div>
+      <div>PR TEST1</div>
       <div>PR TEST2</div>
+      <div>PR TEST3</div>
+      <div>PR TEST4</div>
     </main>
   );
 }
