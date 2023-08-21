@@ -6,6 +6,7 @@ export default function Home() {
       <div>CI TEST</div>
       <div>PR TEST</div>
       <div>PR TEST2</div>
+      <div>Github Actions Test</div>
     </main>
   );
 }
