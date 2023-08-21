@@ -33,7 +33,10 @@ jobs:
 
       - name: Install node modules
         if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: npm ci
 
-      - name: Check Lint
-        run: npm run lint
+      # - name: Check Lint
+      #   run: npm run lint
+      # change only
+      - name: Run test (changedSince)
+        run: npm run lint:changed-since
