@@ -35,8 +35,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
       - name: Install node modules
+        if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm install
 
       - name: Check Lint
